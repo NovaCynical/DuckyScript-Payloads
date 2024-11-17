@@ -1,0 +1,19 @@
+
+REM Author: https://github.com/NovaCynical
+
+REM List all installed drivers and save to a file on the desktop
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+
+REM Run the driverquery command and save to a file
+STRING driverquery /v > "%USERPROFILE%\Desktop\Drivers_List.txt"
+ENTER
+DELAY 3000
+
+STRING echo Driver information has been saved to Drivers_List.txt on your desktop. >> "%USERPROFILE%\Desktop\Drivers_List.txt"
+ENTER
+DELAY 500

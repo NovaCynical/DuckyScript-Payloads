@@ -1,0 +1,67 @@
+
+REM Author: https://github.com/NovaCynical
+
+REM Save Wi-Fi network details to a text file on the current user's desktop
+
+REM Collect network and workstation troubleshooting info
+REM Save to a text file on the desktop
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 1000
+STRING mkdir "%USERPROFILE%\Desktop\Network_Troubleshooting"
+ENTER
+DELAY 1000
+
+REM Save IP configuration
+STRING ipconfig /all > "%USERPROFILE%\Desktop\Network_Troubleshooting\IPConfig.txt"
+ENTER
+DELAY 500
+
+REM Save routing table
+STRING route print > "%USERPROFILE%\Desktop\Network_Troubleshooting\RoutingTable.txt"
+ENTER
+DELAY 500
+
+REM Save ARP cache
+STRING arp -a > "%USERPROFILE%\Desktop\Network_Troubleshooting\ARPCache.txt"
+ENTER
+DELAY 500
+
+REM Save DNS client configuration
+STRING ipconfig /displaydns > "%USERPROFILE%\Desktop\Network_Troubleshooting\DNSCache.txt"
+ENTER
+DELAY 500
+
+REM Save network interfaces
+STRING netsh interface show interface > "%USERPROFILE%\Desktop\Network_Troubleshooting\Interfaces.txt"
+ENTER
+DELAY 500
+
+REM Save firewall configuration
+STRING netsh advfirewall show allprofiles > "%USERPROFILE%\Desktop\Network_Troubleshooting\FirewallStatus.txt"
+ENTER
+DELAY 500
+
+REM Save active TCP/UDP connections
+STRING netstat -an > "%USERPROFILE%\Desktop\Network_Troubleshooting\Netstat.txt"
+ENTER
+DELAY 500
+
+REM Save running processes
+STRING tasklist > "%USERPROFILE%\Desktop\Network_Troubleshooting\RunningProcesses.txt"
+ENTER
+DELAY 500
+
+REM Save system information
+STRING systeminfo > "%USERPROFILE%\Desktop\Network_Troubleshooting\SystemInfo.txt"
+ENTER
+DELAY 1000
+
+REM Echo completion message
+STRING echo "All troubleshooting data has been saved to the folder Network_Troubleshooting on your desktop." > "%USERPROFILE%\Desktop\Network_Troubleshooting\ReadMe.txt"
+ENTER
+DELAY 500

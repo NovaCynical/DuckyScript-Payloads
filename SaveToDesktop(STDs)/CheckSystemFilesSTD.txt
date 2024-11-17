@@ -1,0 +1,32 @@
+
+REM Author: https://github.com/NovaCynical
+
+REM Check System File Integrity and echo results
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING echo Running System File Checker... > "%USERPROFILE%\Desktop\SFC_Log.txt"
+ENTER
+DELAY 500
+STRING sfc /scannow >> "%USERPROFILE%\Desktop\SFC_Log.txt"
+ENTER
+DELAY 15000
+REM Wait for SFC to complete (time depends on the system)
+
+REM Check if issues were found
+STRING find "Windows Resource Protection found" "%USERPROFILE%\Desktop\SFC_Log.txt" > "%USERPROFILE%\Desktop\SFC_Result.txt"
+ENTER
+DELAY 1000
+
+REM Echo results
+STRING if exist "%USERPROFILE%\Desktop\SFC_Result.txt" (echo Issues were detected and logged to SFC_Log.txt. See Desktop for details.) else (echo No issues were found. System is intact.) >> "%USERPROFILE%\Desktop\SFC_Log.txt"
+ENTER
+DELAY 500
+STRING echo Results have been saved to SFC_Log.txt on your desktop.
+ENTER
+DELAY 1000
+

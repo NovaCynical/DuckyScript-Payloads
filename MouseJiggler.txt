@@ -1,4 +1,8 @@
+
+REM Author: https://github.com/NovaCynical
+
 REM Emulate a keypress to keep a system awake for forensics purpose.
+
 DELAY 240000
 CONTROL
 DELAY 240000
